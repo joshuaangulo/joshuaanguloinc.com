@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Joshua Angulo Inc</title>
+	<meta name="description" content="Joshua Angulo is a Microsoft Certified Application Developer with over 9 years of real world experience architecting developing both Windows and Web based applications across multiple industries. He resides in Riverside CA.">
+	<link rel="stylesheet" href="reset.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css.css" type="text/css" media="all" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.form.js"></script>
+	<script type="text/javascript">
+	// <![CDATA[
+		if (!window.jQuery) {
+			// jQuery hasn't been loaded... so let's write it into the head immediately.
+			document.write('<script type="text/javascript" src="/js/jquery-1.3.2.min.js"><\/script>')
+			}
+		
+		// jQuery onDOM ready
+		$(function() {
+
+			// Hide all other cards on initial page load
+			$('.card:gt(0)').hide();
+			
+			$('#menu a').click( function() {
+				var clickedItem = $(this).attr('title');
+				$('.card[id!='+clickedItem+']').hide();
+				$('#' + clickedItem).fadeIn('slow');
+				return false;
+			})
+			
+			$("#send_form").click(function() {
+				
+				// Remove the invalid class from all the inputs upon each click of the sende message button.
+				$('#contact input, #contact textarea').removeClass('invalid');
+				  
+			    // validate form
+				var name = $("input#name").val();  
+				if (name == "") {  
+					$("input#name").addClass('invalid').focus();  
+				return false;  
+				}  
+				var phone = $("input#phone").val();  
+				if (phone == "") {  
+					$("input#phone").addClass('invalid').focus();  
+				return false;  
+				}  
+				var email = $("input#email").val();  
+				if (email == "") {  
+					$("input#email").addClass('invalid').focus();   
+				return false;  
+				}
+				var message = $("textarea#message").val();  
+				if (message == "") {  
+					$("textarea#message").addClass('invalid').focus();  
+				return false;  
+				}
+				
+				//The form is valid. Submit it.
+				$("#contactform").submit();
+				return false;  
+				
+		  });
+		
+		// bind to the form's submit event to the ajax event instead
+	    $('#contactform').submit(function() { 
+	        $(this).ajaxSubmit();
+			//After the form is submitted let's do something fancy pants.
+			$('.card').hide();
+			$('#thanks').fadeIn(3000, function() {
+				$(this).fadeOut(2000, function() {
+					// Then let's go to the home page again.
+					$('#menu > a:first').click();
+				})
+			});
+	        return false; 
+	    });
+
+		});
+		
+	// ]]>
+	</script>
+	
+</head>
+<body>
+<div id="cardWrapper">
+    <div id="content">
+        <!--================= INTRO PAGE =============-->
+        <div id="home" class="card">
+	        <h1>Joshua Angulo, Inc.</h1>
+        </div><!--/intro -->
+
+        <!--================= ABOUT PAGE =============-->
+        <div id="about" class="card">	
+	        <p>Joshua Angulo, Inc. is Joshua Angulo, a Microsoft Certified Application Developer with over nine years or real world experience developing enterprise level applications spanning multiple industries.  Joshua is proficient in multiple languages with a primary focus in ASP.NET, C# and VB.NET since beta release 1.  In addition to a deep knowledge of programming, Joshua is also experienced in the full software development life-cycle and can successfully guide a project from inception to completion.</p><p style="margin-top:5px;">Joshua Angulo, Inc. has developed a number of browser based applications and web sites with <a target="_blank" href="http://www.pneumediastudios.com">Pneumedia Studios</a> and <a target="_blank" href="http://www.jeremyricketts.com">Jeremy Ricketts</a>.</p><p style="margin:10px 0 5px 0;text-align:center;"><a href="http://www.linkedin.com/in/joshuaangulo" target="_blank" ><img src="http://www.linkedin.com/img/webpromo/btn_profile_greytxt_80x15.gif" width="80" height="15" border="0" alt="View Joshua Angulo's profile on LinkedIn"></a></p>
+        </div><!--/about -->
+        
+        <!--================= WORK PAGE =============-->
+        <div id="work" class="card">	
+        <ul>
+            <li><strong>PlumberSurplus.com</strong> - A pure play online retailer, PlumberSurplus.com sells home improvement, kitchen and bath, <a target="_blank" href="http://www.plumbersurplus.com/">plumbing</a>, and building products ranging from <a target="_blank" href="http://www.plumbersurplus.com/Cat/Bathroom-Faucets/991">faucets</a> and <a target="_blank" href="http://www.plumbersurplus.com/Cat/Bathtubs/46">bath tubs</a> to <a target="_blank" href="http://www.plumbersurplus.com/Cat/Sump-Pumps/687">sump pumps</a> and <a target="_blank" href="http://www.plumbersurplus.com/Cat/Access-Doors/606">access doors</a>.  Featured brands include <a target="_blank" href="http://www.plumbersurplus.com/Brands/Moen/114">Moen</a> and <a target="_blank" href="http://www.plumbersurplus.com/Brands/Kohler/230">Kohler</a>.<br /><a target="_blank" href="http://plumbersurplus.com/">(plumbersurplus.com)</a></li>
+            <li><strong>RockStarRecruiting.com</strong> - A nationwide network of experienced recruiters and hiring professionals with real candidates and real orders.<br /><a target="_blank" href="http://www.rockstarrecruiting.com">(rockstarrecruiting.com)</a></li>
+            <li><strong>OutdoorPros.com</strong> - A pure play online retailer offering a tremendous assortment of <a target="_blank" href="http://www.outdoorpros.com/">outdoor products</a>, supplies, equipment, and gear for the adventure enthusiast, OutdoorPros.com offers everything from <a target="_blank" href="http://www.outdoorpros.com/Cat/Camping/128">camping equipment</a> to <a target="_blank" href="http://www.outdoorpros.com/Cat/Outdoor/47">outdoor gear</a> and <a target="_blank" href="http://www.outdoorpros.com/Cat/Folding-Knives/20/List">folding knives</a> to <a target="_blank" href="http://www.outdoorpros.com/Cat/Backpacks/110/List">backpacks</a>.  Among the most popular brands are <a target="_blank" href="http://www.outdoorpros.com/Brands/Gerber/72">Gerber</a> and <a target="_blank" href="http://www.outdoorpros.com/Brands/Kershaw/96">Kershaw</a>.<br /><a target="_blank" href="http://www.outdoorpros.com">(outdoorpros.com)</a></li>
+        </ul>   
+        </div><!--/work -->
+
+        <!--================= CONTACT FORM =============-->
+        <div id="contact" class="card">
+			<form name="contactform" id="contactform" action="/sendmail.php" method="post">  
+		        <dl>
+			        <dt><label for="name">Name:</label></dt>
+				        <dd><input type="text" id="name" name="name" /></dd>
+			        <dt><label for="phone">Phone:</label></dt>
+				        <dd><input type="text" id="phone" name="phone" /></dd>
+			        <dt><label for="email">Email:</label></dt>
+				        <dd><input type="text" id="email" name="email" /></dd>
+			        <dt><label for="message">Message:</label></dt>
+				        <dd><textarea id="message" name="message" /></textarea></dd>
+				    <dt style="margin:0;"></dt>
+				        <dd style="margin:0 0 0 5px;"><a id="send_form" title="Send Message">send message</a></dd>
+		        </dl>
+			</form>
+        </div>
+        <!--/contactForm -->
+        
+        <!--================= THANKS =============-->
+        <p id="thanks" class="card">thanks.</p>
+
+    </div>    
+    <div id="menu">
+        <a href="#" title="home">home</a>&nbsp;::
+	    <a href="#" title="about">about</a>&nbsp;::
+	    <a href="#" title="work">work</a>&nbsp;::
+	    <a href="#" title="contact">contact</a>
+    </div>
+</div><!--/cardWrapper -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-362990-19");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
