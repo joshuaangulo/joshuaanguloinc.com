@@ -28,53 +28,6 @@
 				$('#' + clickedItem).fadeIn('slow');
 				return false;
 			})
-			
-			$("#send_form").click(function() {
-				
-				// Remove the invalid class from all the inputs upon each click of the sende message button.
-				$('#contact input, #contact textarea').removeClass('invalid');
-				  
-			    // validate form
-				var name = $("input#name").val();  
-				if (name == "") {  
-					$("input#name").addClass('invalid').focus();  
-				return false;  
-				}  
-				var phone = $("input#phone").val();  
-				if (phone == "") {  
-					$("input#phone").addClass('invalid').focus();  
-				return false;  
-				}  
-				var email = $("input#email").val();  
-				if (email == "") {  
-					$("input#email").addClass('invalid').focus();   
-				return false;  
-				}
-				var message = $("textarea#message").val();  
-				if (message == "") {  
-					$("textarea#message").addClass('invalid').focus();  
-				return false;  
-				}
-				
-				//The form is valid. Submit it.
-				$("#contactform").submit();
-				return false;  
-				
-		  });
-		
-		// bind to the form's submit event to the ajax event instead
-	    $('#contactform').submit(function() { 
-	        $(this).ajaxSubmit();
-			//After the form is submitted let's do something fancy pants.
-			$('.card').hide();
-			$('#thanks').fadeIn(3000, function() {
-				$(this).fadeOut(2000, function() {
-					// Then let's go to the home page again.
-					$('#menu > a:first').click();
-				})
-			});
-	        return false; 
-	    });
 
 		});
 		
@@ -106,20 +59,11 @@
 
         <!--================= CONTACT FORM =============-->
         <div id="contact" class="card">
-			<form name="contactform" id="contactform" action="/sendmail.php" method="post">  
-		        <dl>
-			        <dt><label for="name">Name:</label></dt>
-				        <dd><input type="text" id="name" name="name" /></dd>
-			        <dt><label for="phone">Phone:</label></dt>
-				        <dd><input type="text" id="phone" name="phone" /></dd>
-			        <dt><label for="email">Email:</label></dt>
-				        <dd><input type="text" id="email" name="email" /></dd>
-			        <dt><label for="message">Message:</label></dt>
-				        <dd><textarea id="message" name="message" /></textarea></dd>
-				    <dt style="margin:0;"></dt>
-				        <dd style="margin:0 0 0 5px;"><a id="send_form" title="Send Message">send message</a></dd>
-		        </dl>
-			</form>
+        	<br>
+        	<br>
+			<p>Give me a call at: (951) 201-6289</p>
+			<br>
+			<p>Email me at: <a href="mailto:joshuaangulo@gmail.com" title="joshuaangulo@gmail.com">joshuaangulo@gmail.com</a></p>
         </div>
         <!--/contactForm -->
         

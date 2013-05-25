@@ -68,36 +68,8 @@ h1 {
 /*====================================
 	Contact Form
 =====================================*/
-#contact dt, #contactForm dd {
-	float:left;
-	margin:1px;
-	}
-#contact dt {
-	clear:left;
-	text-align:right;
-	margin-bottom:4px;
-	display:block; width:45px;
-	}
-#contact input {
-	background:url(images/inputbg.gif) repeat-x left bottom;
-	border:none;
-	width:170px;
-	}
-#contact textarea {
-	border:1px solid #bfbfbf;
-	margin-bottom:4px;
-	width:170px; height:29px;
-	display:block;
-	overflow:auto;
-	background:transparent;
-	padding:2px;
-	font-family: arial, verdana, sans-serif; font-size:1em;
-	}
-#sendMessage {
-	margin-left:20px;
-	}
-.invalid {
-	background: #EEBAB7 !important;
+#contact {
+	text-align: center;
 }
 
 /*====================================
